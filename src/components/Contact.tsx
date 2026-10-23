@@ -2,9 +2,11 @@
 
 import { Mail, Phone, MapPin, Linkedin, Github, Calendar } from 'lucide-react'
 import { useResume } from '@/lib/resumeContext'
+import { getGithubProfileUrl } from '@/lib/profileUtils'
 
 export default function Contact() {
   const { resume } = useResume()
+  const githubUrl = getGithubProfileUrl(resume)
 
   return (
     <section id="contact" className="py-20 px-4">
@@ -79,8 +81,8 @@ export default function Contact() {
                 </div>
               </a>
 
-              {resume.github && <a
-                href={`https://${resume.github}`}
+              {githubUrl && <a
+                href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors group"
@@ -90,7 +92,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">GitHub</p>
-                  <p className="font-semibold">{resume.github}</p>
+                  <p className="font-semibold">{resume.github || resume.githubUsername}</p>
                 </div>
               </a>}
             </div>

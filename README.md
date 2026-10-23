@@ -1,14 +1,18 @@
-# Vishesh Singh - Portfolio
+# Resume-Driven Portfolio
 
 🌐 **Live Sites**:
 - **Vishesh Singh**: [ https://visheshmohan-sketch.github.io/MyPortfolio/vishesh-singh/](https://visheshmohan-sketch.github.io/MyPortfolio/vishesh-singh/)
 - **Sheeba Ahmed**: [https://sheebahbti.github.io/MyPortfolio/](https://sheebahbti.github.io/MyPortfolio/)
 
-A modern, responsive portfolio website showcasing my experience as a Software Engineering Manager with 15+ years in cloud engineering, SaaS, and AI innovation.
+A responsive portfolio site driven by resume profile data and public GitHub repositories.
 
-## � How to Update Your Resume
+## Create a Profile
 
-Edit: `src/lib/defaultResume.json`
+Open `/create` in the running site. Import a DOCX, TXT, or Markdown resume, or paste text copied from a PDF. The browser suggests contact details, a possible title and summary, and skills under common headings. Review the live portfolio preview, enter or correct experience, projects, and education, then export. Resume files are processed locally and are not uploaded; verify suggestions before using them.
+
+Download the profile JSON and use it as `src/lib/defaultResume.json` to drive the homepage. The data format is defined in `src/lib/resumeTypes.ts`. For optional AI initiatives, add an `aiInitiatives` array with `title`, `description`, `impact`, `tags`, and `status` for each item.
+
+The portfolio loads up to six recently updated public repositories from the supplied GitHub username. GitHub's unauthenticated API has rate limits; repository loading falls back to a profile link if the API is unavailable.
 
 Then deploy:
 ```bash

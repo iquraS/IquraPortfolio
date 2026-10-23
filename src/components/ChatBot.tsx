@@ -2,107 +2,47 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react'
+import { useResume } from '@/lib/resumeContext'
+import type { ResumeData } from '@/lib/resumeTypes'
 
 interface Message {
   role: 'user' | 'assistant'
   content: string
 }
 
-const knowledgeBase: Record<string, string> = {
-  // Experience
-  'experience|years|how long': `Sheeba has 15+ years of experience in software engineering, spanning roles from individual contributor to engineering manager. She's been at PROS Inc. since 2014 and became Engineering Manager in 2018.`,
-  
-  // Current role
-  'current|role|job|position|doing now': `Sheeba is currently a Software Engineering Manager at PROS Inc. in Houston, TX. She leads global engineering teams delivering cloud-native SaaS solutions on Azure/AKS, and is pioneering AI initiatives across the organization.`,
-  
-  // AI work
-  'ai|artificial intelligence|llm|machine learning|copilot': `Sheeba is passionate about AI innovation! Her AI initiatives include:
-• AI agents for automated test execution (3% efficiency gain)
-• Spec-Driven Development with AI-assisted validation
-• AI Support Command Center for operational automation
-• LLM integration with Jira for auto-surfacing documentation
-• GitHub Copilot for automated issue resolution`,
-
-  // Skills
-  'skills|technologies|tech stack|know': `Sheeba's core skills include:
-• Cloud: Azure, Kubernetes, AKS, Microservices
-• Development: Java, React, SQL, Spark, REST APIs
-• DevOps: CI/CD, Rundeck, Test Automation
-• Leadership: Team building, Agile/Scrum, Program Management
-• AI: LLMs, AI Agents, Prompt Engineering`,
-
-  // Leadership
-  'lead|manage|team|leadership': `As an engineering leader, Sheeba:
-• Leads global engineering teams on Azure/AKS
-• Achieved 90% team retention through SMART goals and coaching
-• Wears multiple hats across dev, product, QE, and operations
-• Introduced Spec-Driven Development for quality and velocity
-• Created executive JIRA dashboards reducing reporting time by 30%`,
-
-  // Achievements
-  'achievement|accomplish|impact|success': `Key achievements include:
-• Led Willingness to Pay feature contributing 3% revenue increase
-• Reduced deployment time by 30% via Rundeck migration
-• Engineered Spark pipelines: hours → minutes processing
-• 90% team retention through coaching programs
-• Pioneered multiple AI initiatives in production`,
-
-  // Education
-  'education|degree|study|university|college': `Sheeba holds a B.Tech in Computer Science Engineering from Harcourt Butler Technological Institute (HBTI), Kanpur, India.`,
-
-  // Contact
-  'contact|email|phone|reach|hire': `You can reach Sheeba at:
-• Email: sheeba.hbti@gmail.com
-• Phone: 267-251-7525
-• Location: Sugar Land, TX
-• LinkedIn: linkedin.com/in/sheeba-ahmed
-• GitHub: github.com/sheebahbti`,
-
-  // Previous roles
-  'previous|before|history|fiserv|dxc': `Before becoming an Engineering Manager, Sheeba worked as:
-• Lead Software Engineer at PROS (2017-2018)
-• Senior Software Engineer at PROS (2016-2017)
-• Software Engineer at PROS (2014-2016)
-• Sr. Systems Analyst at Fiserv (2010-2014)
-• Engineer at DXC Technology (2006-2010)`,
-
-  // Why hire
-  'why hire|why work|strengths|unique': `What makes Sheeba unique:
-• Rare blend of hands-on technical skills + leadership
-• Proven AI innovation with multiple production implementations
-• End-to-end ownership mindset across the full SDLC
-• Track record of measurable business impact (revenue, efficiency)
-• Strong team builder with 90% retention rate`,
-}
-
-function getResponse(input: string): string {
+function getResponse(input: string, resume: ResumeData): string {
   const lowerInput = input.toLowerCase()
-  
-  for (const [keywords, response] of Object.entries(knowledgeBase)) {
-    const keywordList = keywords.split('|')
-    if (keywordList.some(keyword => lowerInput.includes(keyword))) {
-      return response
-    }
-  }
-  
-  return `I can tell you about Sheeba's:
-• Experience and career journey
-• AI initiatives and innovations
-• Technical skills
-• Leadership approach
-• Key achievements
-• Education
-• Contact information
 
-What would you like to know?`
+  if (/experience|career|history|previous|role|job/.test(lowerInput)) {
+    return `${resume.name}'s experience:\n${resume.experience.map(role => `- ${role.title} at ${role.company} (${role.period})`).join('\n')}`
+  }
+  if (/skill|technology|tech stack/.test(lowerInput)) {
+    return `${resume.name}'s skills:\n${resume.skills.map(category => `- ${category.title}: ${category.skills.join(', ')}`).join('\n')}`
+  }
+  if (/project|ai|initiative/.test(lowerInput)) {
+    const projects = [...resume.projects.map(project => project.title), ...(resume.aiInitiatives ?? []).map(project => project.title)]
+    return projects.length ? `${resume.name}'s projects:\n${projects.map(project => `- ${project}`).join('\n')}` : `No projects are listed for ${resume.name} yet.`
+  }
+  if (/education|degree|school|university/.test(lowerInput)) {
+    return resume.education?.length
+      ? `${resume.name}'s education:\n${resume.education.map(item => `- ${item.degree}, ${item.school} (${item.year})`).join('\n')}`
+      : `Education details are not listed for ${resume.name}.`
+  }
+  if (/contact|email|phone|reach|location/.test(lowerInput)) {
+    return `Contact ${resume.name}:\n- Email: ${resume.email}\n- Location: ${resume.location}\n- LinkedIn: ${resume.linkedin}${resume.github ? `\n- GitHub: ${resume.github}` : ''}`
+  }
+  if (/about|summary|who|tell me/.test(lowerInput)) return resume.summary
+
+  return `Ask me about ${resume.name}'s experience, skills, projects, education, or contact information.`
 }
 
 export default function ChatBot() {
+  const { resume } = useResume()
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `Hi! I'm Sheeba's AI assistant. Ask me anything about her experience, skills, AI projects, or career journey!`,
+      content: `Hi! I'm ${resume.name}'s portfolio assistant. Ask me about their experience, skills, projects, or career journey.`,
     },
   ])
   const [input, setInput] = useState('')
@@ -128,7 +68,7 @@ export default function ChatBot() {
     // Simulate typing delay
     await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 500))
 
-    const response = getResponse(userMessage)
+    const response = getResponse(userMessage, resume)
     setIsTyping(false)
     setMessages(prev => [...prev, { role: 'assistant', content: response }])
   }
@@ -169,8 +109,8 @@ export default function ChatBot() {
                 <Bot className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">Ask About Sheeba</h3>
-                <p className="text-white/70 text-sm">AI-powered assistant</p>
+                <h3 className="font-semibold text-white">Ask About {resume.name}</h3>
+                <p className="text-white/70 text-sm">Resume guide</p>
               </div>
             </div>
           </div>
@@ -243,7 +183,7 @@ export default function ChatBot() {
               </button>
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
-              Try: &quot;What AI projects has Sheeba built?&quot;
+              Try: &quot;What projects are listed for {resume.name}?&quot;
             </p>
           </div>
         </div>

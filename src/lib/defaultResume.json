@@ -8,6 +8,7 @@
   "phone": "267-251-7525",
   "linkedin": "linkedin.com/in/sheeba-ahmed",
   "github": "github.com/sheebahbti",
+  "githubUsername": "sheebahbti",
   "stats": [
     { "value": "15+", "label": "Years Experience" },
     { "value": "90%", "label": "Team Retention" },
@@ -146,6 +147,29 @@
       "title": "Cloud Infrastructure Migration",
       "description": "Led migration of legacy modules to microservices on Azure/AKS with 100+ screens migrated from legacy UI to React",
       "tech": ["Azure", "Kubernetes", "Microservices", "React", "Cloud"]
+    }
+  ],
+  "aiInitiatives": [
+    {
+      "title": "AI Test Automation Agents",
+      "description": "Engineered AI agents to automate Tier 1 test cases and improve test execution efficiency.",
+      "impact": "Improved test efficiency",
+      "tags": ["AI Agents", "Test Automation", "Efficiency"],
+      "status": "Production"
+    },
+    {
+      "title": "Spec-Driven Development",
+      "description": "Implemented AI-assisted documentation and validation to improve delivery predictability.",
+      "impact": "Faster delivery cycles",
+      "tags": ["LLM", "Documentation", "Process Innovation"],
+      "status": "Production"
+    },
+    {
+      "title": "AI Support Command Center",
+      "description": "Built an AI-driven interface that automates operational queries for support teams.",
+      "impact": "Reduced manual workload",
+      "tags": ["AI", "Operations", "Automation"],
+      "status": "Production"
     }
   ],
   "education": [

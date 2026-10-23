@@ -7,6 +7,7 @@
   "email": "vishesh.mohan@gmail.com",
   "phone": "(832) 560-4500",
   "linkedin": "linkedin.com/in/visheshsingh",
+  "githubUsername": "visheshmohan-sketch",
   "skills": [
     { "title": "Portfolio & Delivery", "skills": ["Portfolio Management", "Program Delivery", "Capital Projects", "Project Governance", "Engineering Services Delivery"], "color": "from-blue-500 to-cyan-500" },
     { "title": "Financial Control", "skills": ["Project Financials", "Forecasting", "Cost Control", "Cash Flow", "Power BI", "Oracle Primavera Unifier"], "color": "from-green-500 to-emerald-500" },

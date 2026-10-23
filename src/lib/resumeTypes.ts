@@ -8,9 +8,11 @@ export interface ResumeData {
   phone: string
   linkedin: string
   github?: string
+  githubUsername?: string
   skills: SkillCategory[]
   experience: Experience[]
   projects: Project[]
+  aiInitiatives?: AIInitiative[]
   education?: Education[]
   stats?: { value: string; label: string }[]
 }
@@ -35,6 +37,14 @@ export interface Project {
   description: string
   tech: string[]
   link?: string
+}
+
+export interface AIInitiative {
+  title: string
+  description: string
+  impact: string
+  tags: string[]
+  status: string
 }
 
 export interface Education {

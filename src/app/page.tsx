@@ -7,6 +7,7 @@ import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import Navigation from '@/components/Navigation'
 import ChatBot from '@/components/ChatBot'
+import GitHubProjects from '@/components/GitHubProjects'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Timeline />
       <AIInitiatives />
       <Projects />
+      <GitHubProjects />
       <Contact />
       <ChatBot />
     </main>

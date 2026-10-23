@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ResumeProvider } from '@/lib/resumeContext'
+import defaultResume from '@/lib/defaultResume.json'
 
 export const metadata: Metadata = {
-  title: 'Sheeba Ahmed | Software Engineering Manager',
-  description: 'Hands-on Software Engineering Manager with 15+ years of experience in cloud engineering, SaaS product development, and DevOps.',
-  keywords: ['Software Engineering Manager', 'Azure', 'Kubernetes', 'AI', 'DevOps', 'SaaS'],
-  authors: [{ name: 'Sheeba Ahmed' }],
+  title: `${defaultResume.name} | ${defaultResume.title}`,
+  description: defaultResume.summary,
+  authors: [{ name: defaultResume.name }],
   openGraph: {
-    title: 'Sheeba Ahmed | Software Engineering Manager',
-    description: 'Hands-on Engineering Leader | Cloud & AI Innovator',
+    title: `${defaultResume.name} | ${defaultResume.title}`,
+    description: defaultResume.tagline,
     type: 'website',
   },
 }

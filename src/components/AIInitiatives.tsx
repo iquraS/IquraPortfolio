@@ -1,59 +1,20 @@
 import { Bot, Brain, MessageSquare, GitBranch, Sparkles, Zap } from 'lucide-react'
-
-const aiProjects = [
-  {
-    icon: Bot,
-    title: 'AI Test Automation Agents',
-    description: 'Engineered AI agents to automate Tier 1 test cases, improving test efficiency and reducing execution time by 3%.',
-    impact: '3% faster execution',
-    tags: ['AI Agents', 'Test Automation', 'Efficiency'],
-    status: 'Production',
-  },
-  {
-    icon: Brain,
-    title: 'Spec-Driven Development (SDD)',
-    description: 'Prototyped and implemented AI-assisted documentation and validation, reducing development cycle time and improving delivery predictability.',
-    impact: 'Faster delivery cycles',
-    tags: ['LLM', 'Documentation', 'Process Innovation'],
-    status: 'Production',
-  },
-  {
-    icon: MessageSquare,
-    title: 'AI Support Command Center',
-    description: 'Built an AI-driven UI that automates operational queries, reducing repetitive workload for global support teams.',
-    impact: 'Reduced manual workload',
-    tags: ['AI UI', 'Operations', 'Automation'],
-    status: 'Production',
-  },
-  {
-    icon: Zap,
-    title: 'LLM-Powered Jira Integration',
-    description: 'Integrated LLMs into Jira to auto-surface relevant documentation, streamlining support ticket triage and reducing manual effort.',
-    impact: 'Faster ticket resolution',
-    tags: ['LLM', 'Jira', 'Knowledge Management'],
-    status: 'Production',
-  },
-  {
-    icon: GitBranch,
-    title: 'Copilot for GitHub Issues',
-    description: 'Improved team productivity by assigning simple GitHub issues directly to GitHub Copilot for automated resolution.',
-    impact: 'Increased productivity',
-    tags: ['GitHub Copilot', 'Automation', 'Developer Experience'],
-    status: 'Active',
-  },
-]
-
-const portfolioProject = {
-  icon: GitBranch,
-  title: 'Portfolio Built with AI and VS Code',
-  description: 'Built and maintained this portfolio using AI assistance and VS Code as the development environment.',
-  impact: 'Streamlined portfolio delivery',
-  tags: ['AI', 'VS Code', 'Web Development'],
-  status: 'Active',
-}
+import { useResume } from '@/lib/resumeContext'
 
 export default function AIInitiatives({ includePortfolioProject = false }: { includePortfolioProject?: boolean }) {
-  const projects = includePortfolioProject ? [portfolioProject] : aiProjects
+  const { resume } = useResume()
+  const projects = includePortfolioProject
+    ? [{
+        title: 'Portfolio Built with AI and VS Code',
+        description: `Portfolio for ${resume.name}, built with AI assistance and VS Code.`,
+        impact: 'Portfolio project',
+        tags: ['AI', 'VS Code', 'Web Development'],
+        status: 'Active',
+      }]
+    : resume.aiInitiatives ?? []
+
+  if (projects.length === 0) return null
+  const icons = [Bot, Brain, MessageSquare, GitBranch, Zap]
 
   return (
     <section id="ai" className="py-20 px-4">
@@ -73,7 +34,9 @@ export default function AIInitiatives({ includePortfolioProject = false }: { inc
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const Icon = icons[index % icons.length]
+            return (
             <div
               key={index}
               className="bg-slate-800 rounded-xl p-6 card-hover border border-slate-700 relative overflow-hidden group"
@@ -95,7 +58,7 @@ export default function AIInitiatives({ includePortfolioProject = false }: { inc
 
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-purple-500/20 to-blue-500/20 flex items-center justify-center mb-4">
-                  <project.icon className="w-7 h-7 text-purple-400" />
+                  <Icon className="w-7 h-7 text-purple-400" />
                 </div>
 
                 {/* Content */}
@@ -121,7 +84,8 @@ export default function AIInitiatives({ includePortfolioProject = false }: { inc
                 </div>
               </div>
             </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* AI Philosophy */}

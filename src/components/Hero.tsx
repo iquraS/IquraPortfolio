@@ -2,9 +2,11 @@
 
 import { MapPin, Mail, Phone, Linkedin, Github, Sparkles } from 'lucide-react'
 import { useResume } from '@/lib/resumeContext'
+import { getGithubProfileUrl } from '@/lib/profileUtils'
 
 export default function Hero() {
   const { resume } = useResume()
+  const githubUrl = getGithubProfileUrl(resume)
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -19,8 +21,8 @@ export default function Hero() {
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1">
             <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-              <span className={`${resume.name.startsWith('Vishesh Singh') ? 'text-xl leading-tight' : 'text-4xl'} font-bold gradient-text`}>
-                {resume.name.startsWith('Vishesh Singh') ? <>Vishesh<br />Singh</> : resume.name.split(' ').map((part) => part[0]).join('')}
+              <span className="text-4xl font-bold gradient-text">
+                {resume.name.split(/\s+/).map((part) => part[0]).join('')}
               </span>
             </div>
           </div>
@@ -64,12 +66,12 @@ export default function Hero() {
           >
             Get in Touch
           </a>
-          <a
+          {resume.aiInitiatives?.length ? <a
             href="#ai"
             className="px-8 py-3 border border-gray-600 rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
           >
             View AI Projects
-          </a>
+          </a> : null}
         </div>
 
         {/* Social Links */}
@@ -83,8 +85,8 @@ export default function Hero() {
           >
             <Linkedin className="w-6 h-6" />
           </a>
-          {resume.github && <a
-            href={`https://${resume.github}`}
+          {githubUrl && <a
+            href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-slate-800 rounded-full hover:bg-slate-700 transition-colors"

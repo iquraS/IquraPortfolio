@@ -5,18 +5,19 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useResume } from '@/lib/resumeContext'
-
-const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Career', href: '#timeline' },
-  { label: 'AI Initiatives', href: '#ai' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
+import Link from 'next/link'
 
 export default function Navigation() {
   const { resume } = useResume()
+  const navItems = [
+    { label: 'About', href: '#about' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Career', href: '#timeline' },
+    ...(resume.aiInitiatives?.length ? [{ label: 'AI Initiatives', href: '#ai' }] : []),
+    { label: 'Projects', href: '#projects' },
+    ...(resume.githubUsername ? [{ label: 'GitHub', href: '#github-projects' }] : []),
+    { label: 'Contact', href: '#contact' },
+  ]
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -49,6 +50,9 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            <Link href="/create" className="text-cyan-300 hover:text-white transition-colors duration-200">
+              Create profile
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,6 +77,13 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            <Link
+              href="/create"
+              className="block py-2 text-cyan-300 hover:text-white transition-colors duration-200"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Create profile
+            </Link>
           </div>
         )}
       </div>

@@ -23,6 +23,12 @@ git push origin main
 
 Changes automatically deploy to the live URL!
 
+## Create a Portfolio for Someone Else
+
+The person's resume is enough to prepare the portfolio content. Confirm any details that are missing or unclear, which contact information should be public, and the preferred URL name (optional).
+
+To publish under that person's GitHub Pages account, use a repository in their GitHub account. You will need their GitHub username and repository URL, plus permission to push to that repository; alternatively, the account owner can push the finished changes. A repository URL is not needed to build the portfolio, only to publish it there. Publishing from this repository instead will keep the site under this repository owner's GitHub Pages address. For a custom domain or other hosting provider, configure that hosting separately.
+
 ## 💡 Features
 
 - **Hero Section** - Professional introduction with contact links

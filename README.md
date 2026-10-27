@@ -2,7 +2,7 @@
 
 🌐 **Live Sites**:
 - **Vishesh Singh**: [ https://visheshmohan-sketch.github.io/MyPortfolio/vishesh-singh/](https://visheshmohan-sketch.github.io/MyPortfolio/vishesh-singh/)
-- **Sheeba Ahmed**: [https://sheebahbti.github.io/MyPortfolio/](https://sheebahbti.github.io/MyPortfolio/)
+- **Sheeba Ahmed**: [https://iquras.github.io/IquraPortfolio/](https://iquras.github.io/IquraPortfolio/)
 
 A responsive portfolio site driven by resume profile data and public GitHub repositories.
 

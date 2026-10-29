@@ -15,7 +15,7 @@ export default function Projects() {
           <span className="gradient-text">Key Projects & Achievements</span>
         </h2>
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          Delivering measurable impact through technical excellence and strategic leadership
+          Selected work demonstrating quality, operational execution, and continuous improvement
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

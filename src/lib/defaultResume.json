@@ -1,183 +1,138 @@
 {
-  "name": "Sheeba Ahmed",
-  "title": "Software Engineering Manager",
-  "tagline": "Hands-on Engineering Leader with 15+ years in Cloud, SaaS & AI Innovation",
-  "summary": "Hands-on Software Engineering Manager with 15+ years of experience in cloud engineering, SaaS product development, and DevOps. Expert in Azure, microservices, Kubernetes, CI/CD, and Agile delivery. I wear multiple hats across development management, product, program, QE, support, and operations to keep delivery moving and ensure end-to-end execution. Passionate about automation, AI innovation, workflow simplification, and scalable customer-focused products.",
-  "location": "Sugar Land, TX",
-  "email": "sheeba.hbti@gmail.com",
-  "phone": "267-251-7525",
-  "linkedin": "linkedin.com/in/sheeba-ahmed",
-  "github": "github.com/sheebahbti",
-  "githubUsername": "sheebahbti",
+  "name": "Iqura Siddiqui",
+  "title": "Operations & Quality Professional",
+  "tagline": "Strengthening quality, compliance, and reporting through careful analysis and practical process improvement.",
+  "summary": "Operations and Quality professional with 10+ years of experience in quality control, data analysis, compliance, documentation, reporting, and stakeholder coordination. Experienced in high-volume quality and procurement activities, maintaining audit-ready records, and improving operational processes. Skilled in Advanced Excel, Microsoft Copilot, ChatGPT, and generative AI tools, with a strong interest in using AI and automation to improve reporting, documentation, and business processes.",
+  "location": "Dehradun, Uttarakhand, India",
+  "email": "samqui.fci@gmail.com",
+  "phone": "+91 9997955277",
+  "github": "github.com/iquraS",
+  "githubUsername": "iquraS",
   "stats": [
-    { "value": "15+", "label": "Years Experience" },
-    { "value": "90%", "label": "Team Retention" },
-    { "value": "30%", "label": "Deployment Time Reduced" },
-    { "value": "3%", "label": "Revenue Impact" }
+    { "value": "10+", "label": "Years in Operations & Quality" },
+    { "value": "3,000", "label": "Food-Grain Samples Analyzed" },
+    { "value": "4", "label": "Depots Inspected Monthly" },
+    { "value": "3,000+ MT", "label": "Food Grains Procured" }
+  ],
+  "focusAreas": [
+    {
+      "title": "Quality & Compliance",
+      "description": "Inspecting food grains against quality specifications and maintaining clear, audit-ready compliance records."
+    },
+    {
+      "title": "Operations & Procurement",
+      "description": "Supporting procurement, storage, and stock documentation with attention to accuracy and traceability."
+    },
+    {
+      "title": "Analysis & Reporting",
+      "description": "Turning inspection and operational data into useful reports, records, and process insights."
+    },
+    {
+      "title": "Practical AI & Improvement",
+      "description": "Applying generative AI tools to streamline recurring documentation, reporting, and communication tasks."
+    }
   ],
   "skills": [
     {
-      "title": "Cloud & Infrastructure",
-      "skills": ["Azure", "Kubernetes", "AKS", "Microservices", "Docker"],
+      "title": "Quality & Compliance",
+      "skills": ["Quality Assurance", "Quality Control", "Food-Grain Inspection", "Regulatory Compliance", "Audit Support"],
       "color": "from-blue-500 to-cyan-500"
     },
     {
-      "title": "Development",
-      "skills": ["Java", "React", "SQL", "REST APIs", "Spark"],
+      "title": "Operations & Procurement",
+      "skills": ["Operations Support", "Procurement", "Stock Documentation", "Record Management", "Process Improvement"],
       "color": "from-green-500 to-emerald-500"
     },
     {
-      "title": "DevOps & Automation",
-      "skills": ["CI/CD", "Rundeck", "Cypress", "Test Automation", "Performance Optimization"],
+      "title": "Data & Reporting",
+      "skills": ["Data Analysis", "Advanced Excel", "Quality Reporting", "Database Management", "Documentation"],
       "color": "from-orange-500 to-yellow-500"
     },
     {
-      "title": "AI & Innovation",
-      "skills": ["LLMs", "AI Agents", "GitHub Copilot", "Prompt Engineering", "RAG", "ML"],
+      "title": "AI & Digital Tools",
+      "skills": ["Microsoft Copilot", "ChatGPT", "Generative AI", "AI Fundamentals", "Microsoft Office"],
       "color": "from-purple-500 to-pink-500"
     },
     {
-      "title": "Leadership",
-      "skills": ["Team Building", "Mentorship", "Agile/Scrum", "Program Management", "Stakeholder Communication"],
+      "title": "Communication & Coordination",
+      "skills": ["Stakeholder Coordination", "Cross-functional Collaboration", "Communication", "Teamwork", "Interpersonal Skills"],
       "color": "from-red-500 to-rose-500"
     },
     {
-      "title": "Process & Methodology",
-      "skills": ["Spec-Driven Development", "Risk Management", "SAFe", "Kanban", "JIRA Portfolio"],
+      "title": "Professional Strengths",
+      "skills": ["Analytical Thinking", "Attention to Detail", "Adaptability", "Multitasking", "Time Management"],
       "color": "from-indigo-500 to-violet-500"
     }
   ],
   "experience": [
     {
-      "period": "2018 – Present",
-      "title": "Software Engineering Manager",
-      "company": "PROS Inc.",
-      "location": "Houston, TX",
+      "period": "July 2016 – Present",
+      "title": "Quality Control Inspector",
+      "company": "Food Corporation of India",
+      "location": "India",
       "highlights": [
-        "Engineered AI agents to automate Tier-1 test cases, improving test efficiency and reducing execution time by 3%",
-        "Prototyped Spec Driven Development (SDD) with AI-assisted documentation, reducing development cycle time",
-        "Built AI-driven Support Command Center UI automating operational queries and reducing manual workload",
-        "Integrated LLMs into Jira to auto-surface documentation, streamlining support ticket triage",
-        "Engineered Spark-based pipelines reducing processing time from hours to minutes",
-        "Led migration of 100+ screens from legacy UI to React",
-        "Created executive JIRA dashboards, reducing reporting time by 30%",
-        "Led Willingness-to-Pay feature development, contributing to 3% revenue increase",
-        "Implemented SMART goals and coaching programs, achieving 90% team retention"
+        "Analyzed 3,000 food-grain samples for compliance with government quality standards and specifications.",
+        "Conducted monthly inspections across four depots for two years, covering procurement, storage, quality, and compliance.",
+        "Completed procurement of more than 3,000 metric tonnes of food grains under the Government of India Direct Benefit Scheme.",
+        "Maintained quality records, compliance databases, inspection reports, and stock documentation to support traceability and audit readiness.",
+        "Monitored moisture, purity, damage, contamination, infestation, and spoilage, escalating issues to relevant stakeholders.",
+        "Prepared quality and compliance reports and coordinated with internal teams, warehouse personnel, and external stakeholders.",
+        "Supported internal and external audits and process-improvement initiatives while maintaining regulatory documentation.",
+        "Used Microsoft Copilot, ChatGPT, and other generative AI tools to support reporting, documentation, data analysis, presentations, and professional communications."
       ],
       "color": "from-blue-500 to-purple-500"
     },
     {
-      "period": "2017 – 2018",
-      "title": "Lead Software Engineer",
-      "company": "PROS Inc.",
-      "location": "Houston, TX",
+      "period": "January 2013 – July 2013",
+      "title": "Research Assistant",
+      "company": "CSIR-Central Drug Research Institute",
+      "location": "Lucknow, India",
       "highlights": [
-        "Led design and delivery of microservices and distributed components ensuring scalability",
-        "Drove technical decisions, code quality standards, and best practices across the team",
-        "Partnered with Product and UX to define technical requirements for customer-focused features",
-        "Guided sprint planning and technical estimations to improve delivery predictability",
-        "Mentored engineers through design reviews, pair programming, and technical coaching"
+        "Conducted laboratory experiments and prepared biological samples for assays and analysis.",
+        "Recorded research data in laboratory notebooks and logs.",
+        "Collaborated with colleagues to accomplish shared goals and address research-related issues."
       ],
       "color": "from-purple-500 to-pink-500"
-    },
-    {
-      "period": "2014 – 2017",
-      "title": "Senior Software Engineer → Software Engineer",
-      "company": "PROS Inc.",
-      "location": "Houston, TX",
-      "highlights": [
-        "Developed core modules for airline revenue management using Java and SQL",
-        "Designed microservices, REST APIs, and cloud-native components",
-        "Built UI components and automated tests to improve quality",
-        "Improved performance and reliability through refactoring and automation"
-      ],
-      "color": "from-pink-500 to-red-500"
-    },
-    {
-      "period": "2010 – 2014",
-      "title": "Sr. Systems Analyst",
-      "company": "Fiserv",
-      "location": "Charlotte, NC",
-      "highlights": [
-        "Full-stack development for CPO payments product (ACH/NACHA)",
-        "Performed ethical hacking and security testing using Paros and AppScan",
-        "Applied Agile, Scrum, SAFe, and Kanban as SCRUM Master"
-      ],
-      "color": "from-red-500 to-orange-500"
-    },
-    {
-      "period": "2006 – 2010",
-      "title": "Engineer – Application Development",
-      "company": "DXC Technology",
-      "location": "India",
-      "highlights": [
-        "Developed Java-based applications and web services for SICS reinsurance product",
-        "Contributed to enterprise software development with focus on scalability and performance"
-      ],
-      "color": "from-orange-500 to-yellow-500"
     }
   ],
   "projects": [
     {
-      "title": "AI Test Automation Agent",
-      "description": "Engineered AI agents to automate Tier-1 test cases, improving test efficiency and reducing execution time by 3%",
-      "tech": ["Python", "LLMs", "Cypress", "AI Agents", "Automation"]
+      "title": "Food-Grain Quality Inspection",
+      "description": "Analyzed 3,000 samples against government quality standards, checking key indicators including moisture, purity, damage, contamination, infestation, and spoilage.",
+      "tech": ["Quality Control", "Food-Grain Inspection", "Government Standards"]
     },
     {
-      "title": "Spec Driven Development (SDD)",
-      "description": "Prototyped and implemented SDD with AI-assisted documentation and validation, reducing development cycle time and improving predictability",
-      "tech": ["AI", "Documentation", "GitHub Copilot", "Development Process"]
+      "title": "Depot Inspection & Audit Readiness",
+      "description": "Conducted monthly inspections across four depots for two years and maintained records supporting procurement, storage, compliance, and audit traceability.",
+      "tech": ["Depot Audits", "Compliance", "Documentation"]
     },
     {
-      "title": "AI Support Command Center",
-      "description": "Built an AI-driven Support Command Center UI automating operational queries and reducing repetitive workload for global teams",
-      "tech": ["React", "LLMs", "UI/UX", "AI Integration"]
+      "title": "Food-Grain Procurement",
+      "description": "Completed procurement of more than 3,000 metric tonnes of food grains under the Government of India Direct Benefit Scheme.",
+      "tech": ["Procurement", "Operations", "Stakeholder Coordination"]
     },
     {
-      "title": "RAG-based Codebase Q&A Agent",
-      "description": "Built a RAG-based agent using LangChain, ChromaDB, and Groq (Llama 3) that ingests GitHub repositories with hybrid vector + keyword search",
-      "tech": ["LangChain", "ChromaDB", "Llama 3", "RAG", "GitHub API"]
-    },
-    {
-      "title": "Spark Pipeline Optimization",
-      "description": "Engineered Spark-based pipelines reducing processing time from hours to minutes, improving data processing efficiency",
-      "tech": ["Spark", "Java", "Performance Optimization", "Big Data"]
-    },
-    {
-      "title": "Cloud Infrastructure Migration",
-      "description": "Led migration of legacy modules to microservices on Azure/AKS with 100+ screens migrated from legacy UI to React",
-      "tech": ["Azure", "Kubernetes", "Microservices", "React", "Cloud"]
-    }
-  ],
-  "aiInitiatives": [
-    {
-      "title": "AI Test Automation Agents",
-      "description": "Engineered AI agents to automate Tier 1 test cases and improve test execution efficiency.",
-      "impact": "Improved test efficiency",
-      "tags": ["AI Agents", "Test Automation", "Efficiency"],
-      "status": "Production"
-    },
-    {
-      "title": "Spec-Driven Development",
-      "description": "Implemented AI-assisted documentation and validation to improve delivery predictability.",
-      "impact": "Faster delivery cycles",
-      "tags": ["LLM", "Documentation", "Process Innovation"],
-      "status": "Production"
-    },
-    {
-      "title": "AI Support Command Center",
-      "description": "Built an AI-driven interface that automates operational queries for support teams.",
-      "impact": "Reduced manual workload",
-      "tags": ["AI", "Operations", "Automation"],
-      "status": "Production"
+      "title": "AI-Assisted Reporting & Documentation",
+      "description": "Applied Microsoft Copilot, ChatGPT, and generative AI tools to support report preparation, organize documentation, analyze data, and streamline recurring communications.",
+      "tech": ["Microsoft Copilot", "ChatGPT", "Generative AI", "Reporting"]
     }
   ],
   "education": [
     {
-      "degree": "B.Tech, Computer Science Engineering",
-      "school": "Harcourt Butler Technological Institute, Kanpur, India",
-      "year": "2006"
+      "degree": "M.Sc. in Microbiology",
+      "school": "University of Lucknow, Lucknow",
+      "year": "2015"
+    },
+    {
+      "degree": "B.Sc. in Life Sciences",
+      "school": "Isabella Thoburn College, Lucknow",
+      "year": "2011"
     }
+  ],
+  "certifications": [
+    "Artificial Intelligence (AI) Certification — NASSCOM (Government of India)",
+    "Artificial Intelligence (AI) Certification — Dubai Government",
+    "Microsoft Excel Advanced Certification — Microsoft",
+    "Artificial Intelligence (AI) Certification — Microsoft"
   ]
 }
-

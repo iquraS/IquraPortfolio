@@ -15,7 +15,7 @@ export default function Contact() {
           <span className="gradient-text">Let&apos;s Connect</span>
         </h2>
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          Interested in discussing engineering leadership, AI innovation, or potential opportunities? 
+          Interested in discussing quality, operations, process improvement, or potential opportunities?
           I&apos;d love to hear from you.
         </p>
 
@@ -66,20 +66,22 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-4">Connect Online</h3>
             
             <div className="space-y-4 mb-8">
-              <a
-                href={`https://${resume.linkedin}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
-                  <Linkedin className="w-6 h-6 text-blue-400" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">LinkedIn</p>
-                  <p className="font-semibold">{resume.linkedin}</p>
-                </div>
-              </a>
+              {resume.linkedin && (
+                <a
+                  href={/^https?:\/\//i.test(resume.linkedin) ? resume.linkedin : `https://${resume.linkedin}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors group"
+                >
+                  <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
+                    <Linkedin className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">LinkedIn</p>
+                    <p className="font-semibold">{resume.linkedin}</p>
+                  </div>
+                </a>
+              )}
 
               {githubUrl && <a
                 href={githubUrl}
@@ -104,7 +106,7 @@ export default function Contact() {
                 <h4 className="text-lg font-semibold">Schedule a Chat</h4>
               </div>
               <p className="text-gray-400 text-sm mb-4">
-                Want to discuss engineering leadership, AI innovation, or explore opportunities?
+                Want to discuss quality, operations, or explore opportunities?
               </p>
               <a
                 href={`mailto:${resume.email}?subject=Let's Connect`}

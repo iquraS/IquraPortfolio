@@ -29,7 +29,7 @@ function getResponse(input: string, resume: ResumeData): string {
       : `Education details are not listed for ${resume.name}.`
   }
   if (/contact|email|phone|reach|location/.test(lowerInput)) {
-    return `Contact ${resume.name}:\n- Email: ${resume.email}\n- Location: ${resume.location}\n- LinkedIn: ${resume.linkedin}${resume.github ? `\n- GitHub: ${resume.github}` : ''}`
+    return `Contact ${resume.name}:\n- Email: ${resume.email}\n- Phone: ${resume.phone}\n- Location: ${resume.location}${resume.linkedin ? `\n- LinkedIn: ${resume.linkedin}` : ''}${resume.github ? `\n- GitHub: ${resume.github}` : ''}`
   }
   if (/about|summary|who|tell me/.test(lowerInput)) return resume.summary
 
@@ -85,7 +85,7 @@ export default function ChatBot() {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 ${
+        className={`hidden md:block fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 ${
           isOpen
             ? 'bg-slate-700 hover:bg-slate-600'
             : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:shadow-xl hover:shadow-blue-500/25'
@@ -101,7 +101,7 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden animate-slide-up">
+        <div className="hidden md:block fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden animate-slide-up">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4">
             <div className="flex items-center gap-3">
@@ -171,7 +171,7 @@ export default function ChatBot() {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about experience, AI projects..."
+                placeholder="Ask about experience, skills, or achievements..."
                 className="flex-1 bg-slate-700 rounded-full px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button

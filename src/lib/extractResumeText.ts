@@ -91,12 +91,12 @@ export function suggestResumeFields(text: string) {
   const nameIndex = lines.indexOf(name)
   const followingHeading = lines.findIndex((line, index) => index > nameIndex && headingPattern.test(line))
   const headerLines = lines.slice(nameIndex + 1, followingHeading < 0 ? undefined : followingHeading)
-  const title = explicitTitle || headerLines.find(line => line.length <= 90
+  const title = explicitTitle || (headerLines.find(line => line.length <= 90
     && !/@|https?:\/\/|linkedin|github/i.test(line)
     && !/^\+?[\d\s().-]+$/.test(line)
     && !/^(location|based in|email|phone|mobile)\s*:/i.test(line)
     && !/[.!?](?:\s|$)/.test(line)
-    && !headingPattern.test(line)) ?? ''
+    && !headingPattern.test(line)) ?? '')
   const summary = getSection(['professional summary', 'summary', 'profile', 'objective']).join(' ')
   const location = text.match(/^(?:location|based in)\s*:\s*(.+)$/im)?.[1]?.trim() ?? ''
   const skills = getSection(['technical skills', 'core skills', 'skills', 'core competencies'])

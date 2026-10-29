@@ -12,7 +12,7 @@ export default function Skills() {
           <span className="gradient-text">Skills & Expertise</span>
         </h2>
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          A comprehensive toolkit spanning technical depth and leadership breadth
+          Practical strengths across quality, operations, data, and communication
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -36,6 +36,20 @@ export default function Skills() {
             </div>
           ))}
         </div>
+
+        {resume.certifications?.length ? (
+          <div className="mt-12 bg-slate-800 rounded-2xl p-8 border border-slate-700">
+            <h3 className="text-2xl font-bold mb-6 text-center">Certifications</h3>
+            <ul className="grid md:grid-cols-2 gap-4">
+              {resume.certifications.map((certification, index) => (
+                <li key={index} className="flex items-start gap-3 text-gray-300">
+                  <span className="text-blue-400" aria-hidden="true">•</span>
+                  <span>{certification}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
     </section>
   )

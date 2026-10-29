@@ -15,7 +15,7 @@ export default function Timeline() {
           <span className="gradient-text">Career Journey</span>
         </h2>
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-          {resume.experience.length} roles spanning engineering delivery, leadership, and execution
+          {resume.experience.length} roles across quality, operations, and research
         </p>
 
         <div className="relative">

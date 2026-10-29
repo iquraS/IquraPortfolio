@@ -9,7 +9,7 @@ export default function Hero() {
   const githubUrl = getGithubProfileUrl(resume)
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen pt-24 pb-16 flex items-start justify-center relative overflow-hidden md:items-center md:py-24">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
@@ -76,15 +76,15 @@ export default function Hero() {
 
         {/* Social Links */}
         <div className="flex items-center justify-center gap-6 mt-10">
-          <a
-            href={`https://${resume.linkedin}`}
+          {resume.linkedin && <a
+            href={/^https?:\/\//i.test(resume.linkedin) ? resume.linkedin : `https://${resume.linkedin}`}
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-slate-800 rounded-full hover:bg-slate-700 transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-6 h-6" />
-          </a>
+          </a>}
           {githubUrl && <a
             href={githubUrl}
             target="_blank"

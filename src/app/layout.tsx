@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { ResumeProvider } from '@/lib/resumeContext'
 import defaultResume from '@/lib/defaultResume.json'
 
 export const metadata: Metadata = {
@@ -22,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-slate-900 text-white font-sans">
-        <ResumeProvider>{children}</ResumeProvider>
+        {children}
       </body>
     </html>
   )
